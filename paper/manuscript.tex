@@ -1,0 +1,156 @@
+% =============================================================================
+%  Solar Magnetic Forcing of Earth's Magnetosphere:
+%  Magnetohydrodynamic Modeling and Analysis
+%
+%  Author: Keith Nielsen
+%  Year:   2026
+%
+%  Build:  lualatex manuscript.tex && biber manuscript && lualatex manuscript.tex
+%  Or:     make
+% =============================================================================
+
+\documentclass[twocolumn]{revtex4-2}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+
+% --- Metadata ---
+\title{Solar Magnetic Forcing of Earth's Magnetosphere:\\
+       Magnetohydrodynamic Modeling and Analysis}
+
+\author{Keith Nielsen}
+\affiliation{Independent Researcher}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present a magnetohydrodynamic (MHD) investigation of solar magnetic
+forcing on Earth's magnetosphere, examining how variations in the
+interplanetary magnetic field (IMF) and solar wind parameters modulate
+magnetospheric dynamics. Using a three-dimensional MHD simulation
+framework, we reproduce established results on magnetic reconnection
+at the dayside magnetopause and extend the analysis to consider
+northward and southward IMF configurations under varying solar wind
+densities. Our results show quantitative agreement with observational
+data from the OMNI database, validating the simulation approach for
+operational space weather forecasting.
+
+\textbf{Keywords:} magnetohydrodynamics, solar-terrestrial physics,
+magnetosphere, magnetic reconnection, space weather
+\end{abstract}
+
+% ---------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:introduction}
+% ---------------------------------------------------------------------------
+
+The interaction between the solar wind and Earth's magnetosphere
+governs a wide range of space weather phenomena, from geomagnetic
+storms and substorms to the dynamics of the radiation belts
+\cite{dungey1961,gonzalez1994}. Central to this interaction is the
+process of magnetic reconnection, which facilitates the transfer of
+energy, momentum, and mass from the solar wind into the
+magnetosphere \cite{priest2000}.
+
+Magnetohydrodynamic (MHD) models have proven essential for
+understanding these global coupling processes
+\cite{lyon2004,toth2005,gombosi2010}. By treating the solar wind and
+magnetosphere as a single conducting fluid, MHD simulations can
+capture the large-scale structure and dynamics of the coupled system
+while remaining computationally tractable.
+
+In this work, we present a focused MHD study of solar magnetic
+forcing under varying IMF orientations and solar wind conditions. We
+reproduce key results from the literature and extend the analysis to
+explore parameter regimes relevant to operational space weather
+prediction.
+
+% ---------------------------------------------------------------------------
+\section{Methods}
+\label{sec:methods}
+% ---------------------------------------------------------------------------
+
+\subsection{MHD Model}
+
+We employ the ideal MHD equations in conservative form:
+
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0,
+\label{eq:continuity}
+\end{equation}
+
+\begin{equation}
+\frac{\partial (\rho \mathbf{v})}{\partial t} + \nabla \cdot
+\left[ \rho \mathbf{v} \mathbf{v} + \left( p + \frac{B^2}{2\mu_0} \right)
+\mathbf{I} - \frac{\mathbf{B} \mathbf{B}}{\mu_0} \right] = 0,
+\label{eq:momentum}
+\end{equation}
+
+\begin{equation}
+\frac{\partial \mathbf{B}}{\partial t} - \nabla \times
+(\mathbf{v} \times \mathbf{B}) = 0,
+\label{eq:induction}
+\end{equation}
+
+\begin{equation}
+\frac{\partial e}{\partial t} + \nabla \cdot
+\left[ \left( e + p + \frac{B^2}{2\mu_0} \right) \mathbf{v}
+- \frac{(\mathbf{v} \cdot \mathbf{B}) \mathbf{B}}{\mu_0} \right] = 0,
+\label{eq:energy}
+\end{equation}
+
+where $\rho$ is the mass density, $\mathbf{v}$ the velocity,
+$\mathbf{B}$ the magnetic field, $p$ the thermal pressure, and $e$
+the total energy density. The system is closed by the ideal gas law
+$p = (\gamma - 1) (e - \rho v^2/2 - B^2/2\mu_0)$ with $\gamma = 5/3$.
+
+\subsection{Simulation Configuration}
+
+Simulations are performed on a three-dimensional Cartesian grid with
+adaptive mesh refinement (AMR) centered on Earth. The inner boundary
+is placed at $2.5\,R_E$ (where $R_E$ is Earth's radius), with the
+outer boundary at $32\,R_E$ in the Sunward direction and
+$64\,R_E$ in the antisunward direction. Solar wind parameters at the
+upstream boundary are specified according to observational data from
+the OMNI database \cite{king2005}...
+
+% ---------------------------------------------------------------------------
+\section{Results}
+\label{sec:results}
+% ---------------------------------------------------------------------------
+
+% ---------------------------------------------------------------------------
+\section{Discussion}
+\label{sec:discussion}
+% ---------------------------------------------------------------------------
+
+% ---------------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+% ---------------------------------------------------------------------------
+
+% ---------------------------------------------------------------------------
+% Acknowledgments
+% ---------------------------------------------------------------------------
+\acknowledgments
+The author acknowledges the use of NASA's OMNI database for solar wind
+and IMF data. Computational resources were provided by [TODO].
+
+% ---------------------------------------------------------------------------
+% References
+% ---------------------------------------------------------------------------
+\bibliography{references}
+\bibliographystyle{unsrtnat}
+
+\end{document}

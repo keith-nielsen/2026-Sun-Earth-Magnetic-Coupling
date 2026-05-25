@@ -1,0 +1,62 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.dvi
+*.ps
+*.pdf
+paper/*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# Data (large files — keep small examples only)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Models (large — save weights elsewhere e.g. Zenodo, HuggingFace)
+models/*
+!models/.gitkeep
+!models/README.md
+
+# Multimedia (large — rendered video, etc.)
+multimedia/rendered/*
+!multimedia/rendered/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*

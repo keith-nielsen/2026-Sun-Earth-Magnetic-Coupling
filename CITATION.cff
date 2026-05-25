@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work in your research, please cite it as below."
+authors:
+  - family-names: Nielsen
+    given-names: Keith
+    orcid: https://orcid.org/TODO
+title: "Solar Magnetic Forcing of Earth's Magnetosphere: Magnetohydrodynamic Modeling and Analysis"
+version: 1.0.0
+doi: 10.5281/zenodo.TODO
+date-released: 2026
+repository-code: "https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics"
+license: MIT
+keywords:
+  - magnetohydrodynamics
+  - solar-terrestrial physics
+  - magnetosphere
+  - solar wind
+  - magnetic reconnection
+  - space weather
