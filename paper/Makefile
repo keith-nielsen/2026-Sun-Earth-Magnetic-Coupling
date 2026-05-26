@@ -3,8 +3,11 @@
 # Default target
 all: manuscript.pdf
 
+# Collect figures (wildcard avoids failure when figures/ is empty)
+FIGURES := $(wildcard figures/*.pdf figures/*.png figures/*.jpg figures/*.eps)
+
 # Compile with lualatex + biber
-manuscript.pdf: manuscript.tex references.bib figures/*
+manuscript.pdf: manuscript.tex references.bib $(FIGURES)
 	lualatex -interaction=nonstopmode manuscript.tex
 	biber manuscript
 	lualatex -interaction=nonstopmode manuscript.tex
