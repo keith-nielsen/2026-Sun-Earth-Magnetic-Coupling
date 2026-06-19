@@ -1,19 +1,25 @@
 cff-version: 1.2.0
-message: "If you use this work in your research, please cite it as below."
+message: "If you reference this work, please cite it as below."
 authors:
   - family-names: Nielsen
     given-names: Keith
-    orcid: https://orcid.org/TODO
-title: "Solar Magnetic Forcing of Earth's Magnetosphere: Magnetohydrodynamic Modeling and Analysis"
-version: 1.0.0
-doi: 10.5281/zenodo.TODO
-date-released: 2026
+    # orcid: "https://orcid.org/0000-0000-0000-0000"  # TODO: add ORCID
+title: "The Sun-Earth Energy System: A Unified Framework for Solar Magnetic Forcing of Earth's Interior"
+abstract: >-
+  A unified framework proposing that a fraction of solar magnetic energy couples
+  into Earth's liquid outer core through geomagnetic field lines, supplementing
+  internal heat sources and influencing core dynamics. Synthesizes published data
+  across heliophysics, magnetospheric physics, geodynamics, and seismology, and
+  reports two empirical tests on public data.
+version: 0.1.0  # preprint; not yet released
+# doi: 10.5281/zenodo.XXXXXXX  # TODO: assign on release
 repository-code: "https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics"
 license: MIT
 keywords:
-  - magnetohydrodynamics
-  - solar-terrestrial physics
+  - solar-terrestrial coupling
+  - geodynamo
   - magnetosphere
-  - solar wind
-  - magnetic reconnection
-  - space weather
+  - core-mantle boundary
+  - Earth's energy budget
+  - inner core oscillation
+  - space climate

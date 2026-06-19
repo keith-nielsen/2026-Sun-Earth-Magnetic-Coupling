@@ -1,30 +1,35 @@
-# Solar Magnetic Forcing — Development TODO
+# Development TODO
 
-> Near-term work items for the MHD modeling paper and simulation framework.
-> See [docs/roadmap.md](docs/roadmap.md) for the broader vision.
+> Outstanding work for the manuscript and supporting materials.
+> See [docs/roadmap.md](docs/roadmap.md) for the longer-term plan.
 
-**Status:** Skeleton — paper content and simulation code need writing
+**Status:** Preprint draft integrated; supporting materials in progress.
 
 ## Immediate
 
-- [ ] Write manuscript — fill in Results, Discussion, and Conclusion sections of `paper/manuscript.tex`
-- [ ] Develop MHD simulation code — implement `code/experiments/run_mhd.py` and analysis pipeline in `code/analysis/`
-- [ ] Generate publication-quality figures from simulation output → `paper/figures/`
-- [ ] Validate references — confirm all citations in `references.bib` are correct and complete
+- [ ] Resolve the reference issues in [docs/source-discrepancies.md](docs/source-discrepancies.md)
+      (McIntosh citation years/DOIs, Nayar 2002 DOI, duplicate Knudsen entry).
+- [ ] Fill manuscript front matter: corresponding-author email, Acknowledgments, Funding.
+- [ ] Deposit the analysis pipelines for the two empirical tests (§4.6, §4.7) under `code/`.
+- [ ] Deposit Supplements A–F and interactive models S1–S9 referenced in the text.
 
 ## Short-term
 
-- [ ] Interactive 3D magnetosphere viewer — WebGL visualization (per roadmap Phase 2)
-- [ ] Compare model results against OMBI satellite observations for validation
-- [ ] Assign Zenodo DOI to the repository once the paper is in shape
-- [ ] Add ORCID to CITATION.cff and author metadata
+- [ ] Choose a target journal and generate the journal-specific LaTeX from `make tex`.
+- [ ] Polish PDF typography: a few Unicode glyphs (Greek, super/subscripts, ≈)
+      don't render in the default PDF font. HTML renders them fine. Fix with a
+      Unicode-aware font or a `newunicodechar` preamble when convenient.
+- [ ] Add ORCID to `CITATION.cff`.
+- [ ] (Optional) Phase B citations: convert in-text citations to Pandoc `[@key]`
+      form and enable `--citeproc` for auto-generated, journal-styled references.
 
 ## Medium-term
 
-- [ ] Interactive visualization gallery — time-lapse animations of simulated magnetospheric dynamics
-- [ ] Containerized reproduction — Docker image for running simulations without manual setup
-- [ ] Jupyter notebook tutorials — guided walkthroughs for reproducing figures
+- [ ] Assign a Zenodo (or other) DOI on first release.
+- [ ] Consider renaming the repository — the current name still references
+      "Magnetohydrodynamics" / "Magnetosphere" from the earlier scaffolding,
+      whereas the paper is about coupling into Earth's interior.
 
 ---
 
-*Items move to GitHub Issues when concrete enough to assign. Last updated: 2026-05-26*
+*Last updated: 2026-06-19*
