@@ -1,88 +1,94 @@
-# Solar Magnetic Forcing of Earth's Magnetosphere: Magnetohydrodynamic Modeling
+# Sun-Earth Magnetic Coupling: A Unified Energy Framework for Solar Forcing of the Earth's Interior
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics)](https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics)
-[![Paper Compilation](https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Everything/actions/workflows/paper.yml/badge.svg)](.github/workflows/paper.yml)
+[![Last Commit](https://img.shields.io/github/last-commit/keith-nielsen/2026-Sun-Earth-Magnetic-Coupling)](https://github.com/keith-nielsen/2026-Sun-Earth-Magnetic-Coupling)
+[![Paper Compilation](https://github.com/keith-nielsen/2026-Sun-Earth-Magnetic-Coupling/actions/workflows/paper.yml/badge.svg)](.github/workflows/paper.yml)
 
-> **Originated:** 2026 · **Latest release:** [v1.0](https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics/releases/tag/v1.0)
+> **Author:** Keith Nielsen (independent researcher) · **Status:** Preprint in
+> preparation for submission to a peer-reviewed journal.
 
 ## Overview
 
-This repository contains the full reproducible research package for a magnetohydrodynamic (MHD) study of solar magnetic forcing on Earth's magnetosphere. The work reproduces and extends established results in solar-terrestrial physics, examining how variations in the interplanetary magnetic field (IMF) and solar wind parameters modulate magnetospheric dynamics.
+This repository holds the manuscript and supporting materials for a
+cross-disciplinary **synthesis paper** proposing that a fraction of solar
+magnetic energy couples into Earth's liquid outer core through geomagnetic
+field lines, supplementing internal heat sources and influencing core dynamics.
 
-**Keywords:** `magnetohydrodynamics` `solar-terrestrial-physics` `magnetosphere` `solar-wind` `magnetic-reconnection` `space-weather`
+It is **not** a numerical MHD-simulation study. The paper synthesizes published
+observational data and theoretical constraints from heliophysics, magnetospheric
+physics, geodynamics, and seismology, and reports **two empirical tests on public
+data**:
+
+1. A direct test of a predicted phase correlation between the solar
+   quasi-sexennial oscillation (QSO) and the 5.9-year length-of-day (LOD)
+   oscillation — which returns a **null result**, reported plainly.
+2. A test of LOD residuals against magnetospheric energy input (NASA OMNI
+   proxies), with the atmospheric contribution removed — a **suggestive,
+   Hale-cycle-modulated** signal.
+
+The framework yields fifteen testable predictions, including five forward
+predictions with specific time windows.
+
+**Keywords:** `solar-terrestrial-coupling` `geodynamo` `magnetosphere`
+`core-mantle-boundary` `earth-energy-budget` `inner-core-oscillation`
+`space-climate`
 
 ## Repository Structure
 
 ```
-├── paper/             # Manuscript source (LaTeX), figures, bibliography
-│   ├── manuscript.tex
-│   ├── references.bib
-│   └── figures/
-├── code/              # Reproducible analysis and simulation code
-│   ├── experiments/   # MHD simulation run scripts
-│   ├── analysis/      # Post-processing and visualization
-│   └── requirements.txt
-├── data/              # Example datasets and data provenance
-├── models/            # Saved model configurations (weights hosted externally)
-├── multimedia/        # Interactive visualizations, animations, auxiliary media
-├── docs/              # Roadmap, replication guide, supplementary notes
-└── .github/workflows/ # CI: automated paper compilation
+├── paper/                    # Manuscript (canonical source) + bibliography
+│   ├── manuscript.md         # The paper, in Markdown (source of truth)
+│   ├── references.bib        # Machine-readable references (DOIs verified)
+│   ├── Makefile              # Pandoc build: PDF / HTML / LaTeX export
+│   └── figures/              # Figures (none embedded in the current draft)
+├── code/                     # Analysis pipelines for the two empirical tests
+├── data/                     # Public data sources & provenance (no bulk data)
+├── docs/                     # Roadmap, replication guide, source-discrepancies
+├── models/                   # (reserved)
+├── multimedia/               # Interactive supplementary models S1–S9 (planned)
+└── .github/workflows/        # CI: builds the paper PDF/HTML on push
 ```
 
-## Reproducibility
+## Building the paper
 
-All results in this paper can be reproduced from this repository:
+The manuscript is Markdown; the PDF is produced with [Pandoc](https://pandoc.org)
+and [Tectonic](https://tectonic-typesetting.github.io):
 
 ```bash
-# 1. Set up the environment
-cd code
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-# 2. Run simulations
-cd experiments
-python run_mhd_simulations.py
-
-# 3. Generate figures
-cd ../analysis
-python generate_figures.py
-
-# 4. Build the paper
-cd ../../paper
-make
+cd paper
+make           # -> manuscript.pdf  (Pandoc + Tectonic)
+make html      # -> manuscript.html (no LaTeX toolchain needed)
+make tex       # -> manuscript.tex  (starting point for a journal template)
 ```
 
-See [`docs/replication.md`](docs/replication.md) for a detailed step-by-step guide.
+You can also just read [`paper/manuscript.md`](paper/manuscript.md) directly on
+GitHub.
+
+## Data availability
+
+The paper synthesizes previously published, openly available data. See
+[`data/README.md`](data/README.md) for the full list. Primary sources:
+
+- Sunspot numbers — SILSO v2.0, Royal Observatory of Belgium
+- Length-of-day — IERS Earth Orientation Parameters (EOP C04)
+- Solar wind / magnetospheric indices — NASA OMNI
+- Atmospheric angular momentum — ESMGFZ effective angular momentum functions
+- Earthquake catalog — ISC-GEM Global Instrumental Earthquake Catalogue
+- Geomagnetic field models — ESA Swarm
 
 ## Citation
 
-If you use this work in your research, please cite:
-
-```bibtex
-@article{nielsen2026solar,
-  author  = {Nielsen, Keith},
-  title   = {Solar Magnetic Forcing of Earth's Magnetosphere: 
-             Magnetohydrodynamic Modeling and Analysis},
-  journal = {TODO — Journal Name},
-  year    = {2026},
-  doi     = {TODO — DOI}
-}
-```
-
-See [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
+This is a preprint; citation metadata is provisional. See
+[`CITATION.cff`](CITATION.cff). A DOI will be assigned on release.
 
 ## License
 
-This project is licensed under the MIT License — see the [`LICENSE`](LICENSE) file for details.
+MIT — see [`LICENSE`](LICENSE).
 
-## Roadmap
+## Notes for collaborators
 
-- [x] Initial manuscript and simulation framework (v1.0)
-- [ ] Interactive 3D magnetosphere visualization
-- [ ] Expanded parameter sweeps for IMF orientation
-- [ ] Data-driven validation against satellite observations
-- [ ] Real-time space weather prediction interface
-
-See [`docs/roadmap.md`](docs/roadmap.md) for the full development plan.
+- [`docs/source-discrepancies.md`](docs/source-discrepancies.md) records
+  reference-metadata issues found in the current draft that need an author
+  decision (two DOI corrections and a duplicate entry).
+- [`TODO.md`](TODO.md) lists outstanding work; [`docs/roadmap.md`](docs/roadmap.md)
+  the longer-term plan.

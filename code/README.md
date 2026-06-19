@@ -1,53 +1,39 @@
-# Simulation and Analysis Code
+# Analysis code
 
-## Overview
+This directory is for the analysis pipelines behind the paper's two empirical
+tests. The paper is a synthesis/framework study — there is **no MHD simulation
+code** (the earlier scaffolding here described simulations that were never part
+of this work and has been removed).
 
-This directory contains the code for running MHD simulations, analyzing
-results, and generating figures for the paper. All code is version-controlled
-alongside the manuscript to ensure full reproducibility.
+> **Status:** pipelines to be deposited. The methodology is fully specified in
+> the manuscript (§4.6, §4.7) and Supplements E and F. The scripts that produced
+> the reported numbers should be added here so the results are reproducible.
 
-## Structure
+## Pipeline 1 — QSO–LOD phase correlation (§4.6, Supplement E)
 
-```
-code/
-├── experiments/          # MHD simulation run scripts
-│   ├── run_mhd.py       # Main simulation driver
-│   ├── config/          # Simulation parameter files
-│   └── submit_jobs.sh   # HPC job submission (SLURM/PBS)
-├── analysis/             # Post-processing and visualization
-│   ├── generate_figures.py
-│   ├── compute_metrics.py
-│   └── compare_observations.py
-└── requirements.txt      # Python dependencies
-```
+Tests the predicted phase correlation between the solar quasi-sexennial
+oscillation and the 5.9-year length-of-day oscillation. **Result: null.**
 
-## Quick Start
+- Inputs: monthly sunspot number (SILSO v2.0), daily LOD (IERS EOP C04 20 v2),
+  1962–2025.
+- Method: detrend; 5.0–7.0 yr band-pass (4th-order Butterworth, zero-phase
+  `scipy.signal.filtfilt`); zero-lag correlation and lag structure; Hilbert
+  instantaneous-phase / phase-locking value; significance vs phase-randomized
+  Fourier surrogates and AR(1) red-noise surrogates; band-edge sensitivity
+  sweep; synthetic positive/negative controls.
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+## Pipeline 2 — LOD residual vs magnetospheric energy input (§4.7, Supplement F)
 
-# Run a small test simulation
-cd experiments
-python run_mhd.py --config config/default.yaml --output ../../data/processed/
+Tests whether rotation anomalies track magnetospheric energy input.
 
-# Generate figures from pre-computed results
-cd ../analysis
-python generate_figures.py --input ../../data/processed/ --output ../../paper/figures/
-```
+- Inputs: monthly LOD residuals; six NASA OMNI proxies (AE, Dst, Akasofu
+  epsilon, solar-wind speed, dynamic pressure, IMF Bz), 1963–2025; ESMGFZ
+  effective angular momentum functions (AAM), 1976–2025.
+- Method: broadband and lagged correlations; subtraction of the atmospheric
+  angular momentum contribution; 5-year running correlation vs the epsilon
+  function; pre/post-2020 shift analysis.
 
-## Dependencies
+## Environment
 
-See `requirements.txt` for pinned versions. Key packages:
-
-- `numpy`, `scipy` — numerical computation
-- `matplotlib` — publication-quality figures
-- `h5py` / `netCDF4` — simulation output I/O
-- `astropy` — coordinate transformations and units
-
-## Notes
-
-- All simulations should be run from this directory
-- Figure output goes to `paper/figures/` for inclusion in the manuscript
-- See `experiments/config/` for the exact parameter sets used in the paper
+See [`requirements.txt`](requirements.txt). Core dependencies: `numpy`, `scipy`,
+`pandas`, `matplotlib`.

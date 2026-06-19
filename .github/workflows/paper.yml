@@ -1,0 +1,56 @@
+name: Compile Paper
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'paper/**'
+      - '.github/workflows/paper.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'paper/**'
+      - '.github/workflows/paper.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Install Tectonic
+        run: |
+          TAG=$(curl -s https://api.github.com/repos/tectonic-typesetting/tectonic/releases/latest \
+            | grep -oP '"tag_name":\s*"\Ktectonic@[^"]+' | head -1)
+          VER=${TAG#tectonic@}
+          curl -sL "https://github.com/tectonic-typesetting/tectonic/releases/download/${TAG}/tectonic-${VER}-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar xz
+          sudo mv tectonic /usr/local/bin/
+          tectonic --version
+
+      - name: Build paper (PDF + HTML)
+        run: |
+          cd paper
+          make
+          make html
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript
+          path: |
+            paper/manuscript.pdf
+            paper/manuscript.html
+
+      - name: Create Release on tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: paper/manuscript.pdf
+          generate_release_notes: true

@@ -16,6 +16,7 @@
 *.ps
 *.pdf
 paper/*.pdf
+paper/manuscript.html
 
 # Python
 __pycache__/

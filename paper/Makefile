@@ -1,29 +1,48 @@
-# Paper Build System
+# Paper build system (Pandoc)
+#
+# Canonical source is manuscript.md (Markdown). Pandoc renders it to a
+# submission-quality PDF and to HTML; a LaTeX target is provided for export
+# into a journal-specific template once a target journal is chosen.
+#
+#   make          # build manuscript.pdf (via tectonic)
+#   make html     # build manuscript.html (no LaTeX toolchain needed)
+#   make tex      # export manuscript.tex for journal templating
+#   make clean
 
-# Default target
+PANDOC      ?= pandoc
+SRC         := manuscript.md
+BIB         := references.bib
+PDF_ENGINE  ?= tectonic
+
+COMMON_OPTS := --from gfm \
+               --metadata date="$(shell date +%Y-%m-%d)" \
+               -V geometry:margin=1in \
+               -V linkcolor:blue \
+               -V fontsize=11pt
+
 all: manuscript.pdf
 
-# Collect figures (wildcard avoids failure when figures/ is empty)
-FIGURES := $(wildcard figures/*.pdf figures/*.png figures/*.jpg figures/*.eps)
+# Primary output: PDF. tectonic (XeTeX) handles the manuscript's Unicode
+# (Greek, superscripts, em-dashes) without a manual TeX install.
+manuscript.pdf: $(SRC) $(BIB)
+	$(PANDOC) $(SRC) $(COMMON_OPTS) --pdf-engine=$(PDF_ENGINE) -o $@
 
-# Compile with lualatex + biber
-manuscript.pdf: manuscript.tex references.bib $(FIGURES)
-	lualatex -interaction=nonstopmode manuscript.tex
-	biber manuscript
-	lualatex -interaction=nonstopmode manuscript.tex
-	lualatex -interaction=nonstopmode manuscript.tex
+# Always-available HTML build for casual readers (no LaTeX needed).
+html: manuscript.html
+manuscript.html: $(SRC) $(BIB)
+	$(PANDOC) $(SRC) --from gfm --standalone --toc -o $@
 
-# Quick compile (no bib, no index)
-quick:
-	lualatex -interaction=nonstopmode manuscript.tex
+# LaTeX export — starting point for adapting to a journal's template.
+tex: manuscript.tex
+manuscript.tex: $(SRC) $(BIB)
+	$(PANDOC) $(SRC) $(COMMON_OPTS) --standalone -o $@
 
-# Clean build artifacts
+# Phase B (optional): once in-text citations are converted to Pandoc [@key]
+# form, enable automatic bibliography generation in any journal's CSL style:
+#   $(PANDOC) $(SRC) $(COMMON_OPTS) --citeproc --bibliography=$(BIB) \
+#       --csl=<journal-style>.csl --pdf-engine=$(PDF_ENGINE) -o manuscript.pdf
+
 clean:
-	rm -f *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.lof *.log *.lot *.out *.run.xml *.synctex.gz *.toc *.dvi *.ps
-	rm -f manuscript.pdf
+	rm -f manuscript.pdf manuscript.html manuscript.tex
 
-# Extreme clean (also removes figures-derived artifacts)
-distclean: clean
-	rm -f figures/*.pdf figures/*.png
-
-.PHONY: all quick clean distclean
+.PHONY: all html tex clean

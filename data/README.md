@@ -1,40 +1,22 @@
-# Data Directory
+# Data
 
-## Policy
+This paper synthesizes previously published, openly available data. No bulk data
+is tracked in git; the analyses pull from the public sources below.
 
-This directory contains the data used in this study. Due to size constraints,
-only small example or synthetic datasets are tracked in git. Full datasets
-are archived separately.
+## Data sources
 
-## Contents
+| Dataset | Source | URL |
+|---|---|---|
+| Sunspot number (monthly, v2.0) | SILSO, Royal Observatory of Belgium | https://www.sidc.be/SILSO/ |
+| Length of day (IERS EOP C04 20 v2) | IERS Earth Orientation Centre | https://www.iers.org/ |
+| Solar wind / magnetospheric indices (AE, Dst, ε, V, P, IMF Bz) | NASA OMNI | https://omniweb.gsfc.nasa.gov/ |
+| Effective angular momentum functions (AAM) | ESMGFZ | http://esmdata.gfz-potsdam.de/ |
+| Global instrumental earthquake catalogue | ISC-GEM | http://www.isc.ac.uk/iscgem/ |
+| Geomagnetic field models | ESA Swarm | https://earth.esa.int/eogateway/missions/swarm |
+| Inner-core rotation estimates | Yang & Song (2023), *Nat. Geosci.* | https://doi.org/10.1038/s41561-022-01112-z |
 
-- `raw/` — Original data as obtained from sources (e.g., OMNI database exports).
-  Not version-controlled; see `sources.md` for download instructions.
-- `processed/` — Cleaned, normalized, or derived datasets used in the paper's
-  figures and analysis.
+## Reproducing the analyses
 
-## Data Sources
-
-| Dataset | Source | URL | Citation |
-|---------|--------|-----|----------|
-| OMNI solar wind data | NASA OMNIWeb | https://omniweb.gsfc.nasa.gov | King & Papitashvili (2005) |
-| [TODO — additional sources] | | | |
-
-## Reproducing the Data
-
-Run the following to download and process all datasets:
-
-```bash
-cd code/analysis
-python download_data.py --output ../../data/raw/
-python preprocess_data.py --input ../../data/raw/ --output ../../data/processed/
-```
-
-## Large Data
-
-Full simulation output and large observational datasets are archived at:
-
-- **Zenodo:** [TODO — DOI]
-- **Size:** ~XX GB
-
-To reproduce results without downloading the full archive, see `docs/replication.md`.
+The two empirical tests (manuscript §4.6 and §4.7) draw directly from the sources
+above. See [`code/README.md`](../code/README.md) for the pipeline descriptions;
+the scripts are to be deposited alongside the manuscript.
