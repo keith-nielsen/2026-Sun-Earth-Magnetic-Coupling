@@ -1,4 +1,4 @@
-# The Sun-Earth Energy System: A Unified Framework for Solar Magnetic Forcing of Earth's Interior
+# Sun-Earth Magnetic Coupling: A Unified Energy Framework for Solar Forcing of the Earth's Interior
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics)](https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics)

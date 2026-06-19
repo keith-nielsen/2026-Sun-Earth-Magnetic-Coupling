@@ -14,7 +14,7 @@ reference-section-title: "References"
 
 `◆ VERSION: sun-earth-magnetic-coupling-2026-06-12-07 ◆`
 
-# The Sun-Earth Energy System: A Unified Framework for Solar Magnetic Forcing of Earth's Interior
+# Sun-Earth Magnetic Coupling: A Unified Energy Framework for Solar Forcing of the Earth's Interior
 
 **Author(s):** Keith Nielsen
 
