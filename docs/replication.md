@@ -7,8 +7,8 @@ the analysis scripts are deposited) re-running the two tests.
 ## Build the paper
 
 ```bash
-git clone https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics.git
-cd 2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics/paper
+git clone https://github.com/keith-nielsen/2026-Sun-Earth-Magnetic-Coupling.git
+cd 2026-Sun-Earth-Magnetic-Coupling/paper
 make          # manuscript.pdf  (requires pandoc + tectonic)
 make html     # manuscript.html (requires only pandoc)
 ```

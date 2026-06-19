@@ -1,8 +1,8 @@
 # Sun-Earth Magnetic Coupling: A Unified Energy Framework for Solar Forcing of the Earth's Interior
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics)](https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics)
-[![Paper Compilation](https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics/actions/workflows/paper.yml/badge.svg)](.github/workflows/paper.yml)
+[![Last Commit](https://img.shields.io/github/last-commit/keith-nielsen/2026-Sun-Earth-Magnetic-Coupling)](https://github.com/keith-nielsen/2026-Sun-Earth-Magnetic-Coupling)
+[![Paper Compilation](https://github.com/keith-nielsen/2026-Sun-Earth-Magnetic-Coupling/actions/workflows/paper.yml/badge.svg)](.github/workflows/paper.yml)
 
 > **Author:** Keith Nielsen (independent researcher) · **Status:** Preprint in
 > preparation for submission to a peer-reviewed journal.

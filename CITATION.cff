@@ -13,7 +13,7 @@ abstract: >-
   reports two empirical tests on public data.
 version: 0.1.0  # preprint; not yet released
 # doi: 10.5281/zenodo.XXXXXXX  # TODO: assign on release
-repository-code: "https://github.com/keith-nielsen/2026-Magnetics-Solar-Forcing-Earth-Magnetohydrodynamics"
+repository-code: "https://github.com/keith-nielsen/2026-Sun-Earth-Magnetic-Coupling"
 license: MIT
 keywords:
   - solar-terrestrial coupling
