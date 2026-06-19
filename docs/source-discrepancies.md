@@ -21,10 +21,24 @@ The DOI `10.1007/s11207-019-1474-y` actually belongs to the *"sudden death"* pap
 **`references.bib` now uses the correct records** (keys `mcintosh2019` = "sudden
 death" 2019; `mcintosh2020` = "overlapping cycles" 2020).
 
-**Action for author:** update the in-text citation years and the manuscript's own
-References list — the "overlapping cycles" work should be cited as **2020** and the
-"sudden death" work as **2019**. Check each in-text use of `McIntosh (2019)` /
-`McIntosh (2021)` to confirm it points at the intended paper.
+**Resolved in the manuscript.** The in-text citations and the References list have
+been corrected, attributing each claim to the paper that actually supports it:
+
+- **Terminator** definition and the **step-function rise in solar/geomagnetic
+  activity** at terminators → McIntosh et al. **2019** (*Sol. Phys.* 294:88, the
+  "sudden death"/solar-interior paper). This covers the three in-text uses in
+  §4.2 (inner-core oscillation), §6.1 (Prediction 1), and the glossary, plus the
+  terminator clause in §4.3 — all of which already read "2019" and now resolve to
+  the correct record.
+- **Solar Cycle 25 stronger than the consensus forecast** (§4.3) → McIntosh et al.
+  **2020** (*Sol. Phys.* 295:163, the "overlapping cycles" paper, whose result is
+  precisely a stronger-than-consensus SC25 forecast). The §4.3 sentence that read
+  "(McIntosh et al., 2021)" — a year with no matching publication — was the only
+  wrong in-text year; it is now split so the terminator claim cites 2019 and the
+  forecast claim cites 2020.
+
+> Please sanity-check the §4.3 attribution: the added `(McIntosh et al., 2020)`
+> on the forecast sentence is editorial and easy to drop if you prefer.
 
 ## 2. Nayar et al. 2002 DOI does not resolve
 

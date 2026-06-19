@@ -200,7 +200,7 @@ Earth's rotation has been decelerating for billions of years under lunar tidal f
 
 No established model predicted this acceleration. Atmospheric and oceanic angular momentum exchanges cannot account for its magnitude. The ice mass redistribution hypothesis (in which melting polar ice allows mass to move closer to Earth's rotation axis, increasing spin rate) has not been ruled out. However, it carries a testable physical consequence: the redistribution of mass required to produce the observed acceleration should produce measurable changes in Earth's oblateness, detectable as very high resolution altitude changes at the equator and as appreciable sea level rise. Whether the observed geodetic and sea level records contain a signal of the required magnitude warrants investigation.
 
-The timing is notable. The Hale cycle terminator marking the transition from Solar Cycle 24 to Solar Cycle 25 occurred in mid-2020. Terminator events produce a rapid, global reconfiguration of the Sun's magnetic field and a step-function rise in geomagnetic activity (McIntosh et al., 2021). Solar Cycle 25 subsequently proved much stronger than the consensus forecast.
+The timing is notable. The Hale cycle terminator marking the transition from Solar Cycle 24 to Solar Cycle 25 occurred in mid-2020. Terminator events produce a rapid, global reconfiguration of the Sun's magnetic field and a step-function rise in geomagnetic activity (McIntosh et al., 2019). Solar Cycle 25 subsequently proved much stronger than the consensus forecast (McIntosh et al., 2020).
 
 The torque required to produce the observed acceleration is approximately 3 × 10¹⁷ N m sustained over several years. The electromagnetic coupling torque between Earth's outer core and mantle is estimated at 10¹⁸ to 10²⁰ N m. A modest change in this torque, driven by altered outer core flow patterns responding to changed solar forcing, would suffice. A direct test of this association, correlating the length-of-day residual against magnetospheric energy proxies with the atmospheric contribution removed, is presented in Section 4.7.
 
@@ -526,9 +526,9 @@ Love, J.J., & Thomas, J.N. 2013. Insignificant solar-terrestrial triggering of e
 
 Marchitelli, V., Harabaglia, P., Troise, C., & De Natale, G. 2020. On the correlation between solar activity and large earthquakes worldwide. *Sci Rep*. **10**, 11495. https://doi.org/10.1038/s41598-020-67860-3
 
-McIntosh, S.W., Chapman, S., Leamon, R.J., Egeland, R., & Watkins, N.W. 2019. Overlapping magnetic activity cycles and the sunspot number: Forecasting sunspot cycle 25 amplitude. *Sol Phys*. **294**, 88. https://doi.org/10.1007/s11207-019-1474-y
+McIntosh, S.W., Leamon, R.J., Egeland, R., Dikpati, M., Fan, Y., et al. 2019. What the sudden death of solar cycles can tell us about the nature of the solar interior. *Sol Phys*. **294**, 88. https://doi.org/10.1007/s11207-019-1474-y
 
-McIntosh, S.W., Leamon, R.J., Egeland, R., Dikpati, M., Fan, Y., et al. 2021. What the sudden death of solar cycles can tell us about the nature of the solar interior. *Sol Phys*. **296**, 189. https://doi.org/10.1007/s11207-021-01929-y
+McIntosh, S.W., Chapman, S., Leamon, R.J., Egeland, R., & Watkins, N.W. 2020. Overlapping magnetic activity cycles and the sunspot number: Forecasting sunspot cycle 25 amplitude. *Sol Phys*. **295**, 163. https://doi.org/10.1007/s11207-020-01723-y
 
 Mound, J.E., & Buffett, B.A. 2006. Detection of a gravitational oscillation in length-of-day. *Earth Planet Sci Lett*. **243**(3-4), 383-389. https://doi.org/10.1016/j.epsl.2006.01.043
 
